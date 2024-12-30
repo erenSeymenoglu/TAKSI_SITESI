@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taksi Kayıtları</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #ff6600;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #e65c00;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .register-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff6600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="text"]:focus {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    input[type="text"]:focus {
+      border-color: #ff6600;
+      outline: none;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff6600;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #e65c00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h3>Menü</h3>
+    <a href="kayıt.html">Taksi Kayıtları</a>
+    <a href="grafik.html">Grafik Kayıtları</a>
+  </div>
+
+  <div class="main-content">
+    <div class="register-container">
+      <div class="register-box" id="kayıt">
+        <h2>
+          <!-- Ana sayfaya yönlendiren ikon -->
+          <a href="index.html">
+            <img src="images/favicon.ico" alt="Icon" class="header-icon">
+          </a>
+          JetTaksi Takip Kayıt
+        </h2>
+        <form action="#" method="post">
+
+          <!-- Taksi Numarası -->
+          <div class="input-group">
+            <label for="taxi-number">Taksi Numarası</label>
+            <input type="text" id="taxi-number" name="taxi-number" placeholder="Taksi numarasını girin" required>
+          </div>
+
+          <!-- Nereden -->
+          <div class="input-group">
+            <label for="from">Nereden</label>
+            <input type="text" id="from" name="from" placeholder="İl adı girin (örn. İstanbul)" required>
+          </div>
+
+          <!-- Nereden İlçe -->
+          <div class="input-group">
+            <label for="from-district">Nereden İlçe</label>
+            <input type="text" id="from-district" name="from-district" placeholder="İlçe adı girin (örn. Kadıköy)" required>
+          </div>
+
+          <!-- Nereye -->
+          <div class="input-group">
+            <label for="to">Nereye</label>
+            <input type="text" id="to" name="to" placeholder="İl adı girin (örn. Ankara)" required>
+          </div>
+
+          <!-- Nereye İlçe -->
+          <div class="input-group">
+            <label for="to-district">Nereye İlçe</label>
+            <input type="text" id="to-district" name="to-district" placeholder="İlçe adı girin (örn. Kızılay)" required>
+          </div>
+
+          <!-- Gönder Butonu -->
+          <button type="submit" class="btn">Kaydet</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

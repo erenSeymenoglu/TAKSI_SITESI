@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel Girişi</title>
+  <style>
+    /* Genel sayfa stilini oluşturuyoruz */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-box {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: #ff6600; /* Turuncu renk */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-icon {
+  width: 30px; /* İkon boyutunu ayarlayın */
+  height: 30px; 
+  margin-right: 10px; /* Başlık ile ikon arasındaki boşluk */
+  cursor: pointer;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #ff6600; /* Odaklanıldığında turuncu renk */
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff6600;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #e65c00;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>
+        <!-- Ana sayfaya yönlendiren ikon -->
+        <a href="index.html">
+          <img src="images/favicon.ico" alt="Icon" class="header-icon">
+        </a>
+        Admin Paneli Girişi
+      </h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="username">Kullanıcı Adı</label>
+          <input type="text" id="username" placeholder="Kullanıcı adı girin" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Şifre</label>
+          <input type="password" id="password" placeholder="Şifre girin" required>
+        </div>
+        <button type="submit" class="btn">Giriş Yap</button>
+        <p id="error-message" class="error-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <script> 
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Formun gönderilmesini engeller
+
+      // Kullanıcı adı ve şifre
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Doğru kullanıcı adı ve şifre
+      const correctUsername = "admin";
+      const correctPassword = "admin";
+
+      // Hata mesajı
+      const errorMessage = document.getElementById('error-message');
+
+      // Giriş doğrulaması
+      if (username === correctUsername && password === correctPassword) {
+        // Başarılı giriş, yönlendirme
+        window.location.href = "kayit.html"; // Burada başka bir admin sayfasına yönlendiriliyor
+      } else {
+        // Hatalı giriş, hata mesajını göster
+        errorMessage.textContent = "Yanlış kullanıcı adı veya şifre! Lütfen tekrar deneyin.";
+      }
+    });
+  </script>
+</body>
+</html>
